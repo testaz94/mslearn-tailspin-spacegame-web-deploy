@@ -3,6 +3,7 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
+  dotnetSdkVersion: '3.1'
 
 stages:
 - stage: 'Build'
@@ -15,7 +16,6 @@ stages:
       - npm
       variables:
         wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-        dotnetSdkVersion: '3.1.3'
     steps:
     - task: UseDotNet@2
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
