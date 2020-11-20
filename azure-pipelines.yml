@@ -3,6 +3,8 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
+  wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
@@ -12,8 +14,6 @@ stages:
       vmImage: 'ubuntu-18.04'
       demands:
       - npm
-      variables:
-        wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
     steps:
     - task: UseDotNet@2
       inputs:
