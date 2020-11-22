@@ -69,11 +69,11 @@ stages:
 
 - stage: 'Dev'
   condition: |
-  and
-  (
-    succeeded(),
-    eq(variables['Build.SourceBranchName'], variables['releaseBranchName'])
-  )
+    and
+    (
+      succeeded(),
+      eq(variables['Build.SourceBranchName'], variables['releaseBranchName'])
+    )
   displayName: 'Deploy the web application'
   dependsOn: Build
   jobs:
